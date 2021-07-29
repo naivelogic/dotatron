@@ -1,0 +1,3 @@
+[submodule "DOTA_devkit"]
+	path = DOTA_devkit
+	url = https://github.com/CAPTAIN-WHU/DOTA_devkit.git
