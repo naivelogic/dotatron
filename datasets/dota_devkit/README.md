@@ -1,3 +1,5 @@
+Based on [CAPTAIN-WHU/DOTA_devkit](https://github.com/CAPTAIN-WHU/DOTA_devkit)
+
 ## Installation
 1. install swig
 ```

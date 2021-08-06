@@ -1,3 +1,0 @@
-[submodule "datasets/DOTA_devkit"]
-	path = datasets/DOTA_devkit
-	url = https://github.com/CAPTAIN-WHU/DOTA_devkit.git
