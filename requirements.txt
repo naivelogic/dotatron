@@ -1,0 +1,35 @@
+# pip install -r requirements.txt
+
+# base ----------------------------------------
+Cython
+torch==1.7.0
+torchvision==0.8.0
+ninja
+yacs 
+matplotlib 
+tqdm 
+opencv-python 
+pandas 
+numpy 
+Pillow 
+imgaug 
+albumentations
+Shapely
+seaborn
+pillow
+pandas
+scipy
+ipywidgets
+pylint #vscode
+autopep8 #vscode
+argparse
+timm
+six
+tensorboardX
+tensorboard
+
+# extras --------------------------------------
+# thop  # FLOPS computation
+# seaborn  # plotting
+# packaging  # for coremltools
+# scikit-learn
