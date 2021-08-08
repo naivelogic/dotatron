@@ -3,7 +3,7 @@ from PIL import Image
 import json
 import pickle
 
-from polygon_helper import polygonToRotRectangle
+from polygon_helper import poly2xywha
 from dota_project import DOTA2CLASSES
 from detectron2.structures import BoxMode
 
@@ -62,13 +62,14 @@ def dotatron_loader(dataset_dir, load_dataset=False, classlist=DOTA2CLASSES, dat
                 elif len(labeltxt_line) >= 10:
                     tmp_ann["difficult"] = labeltxt_line[9]
                 
-                tmp_ann["poly"] = [float(labeltxt_line[i]) for i in range(8)] # poly format > x1, y1, x2, y2, x3, y3, x4, y4,
+                tmp_ann["poly"] = [float(labeltxt_line[i]) for i in range(8)] # poly format > x1, y1, x2, y2, x3, y3, x4, y4,              
+
                 if classlist_flag and tmp_ann["name"] not in classlist:
                     continue
 
                 annotation = {
                     "category_id": classlist.index(tmp_ann["name"]),
-                    "bbox": polygonToRotRectangle(tmp_ann["poly"]),
+                    "bbox": poly2xywha(tmp_ann["poly"]),
                     "bbox_mode": BoxMode.XYWHA_ABS,
                 }
                 image_dict["annotations"].append(annotation)
@@ -76,7 +77,7 @@ def dotatron_loader(dataset_dir, load_dataset=False, classlist=DOTA2CLASSES, dat
         if len(image_dict["annotations"]) > 0:
             data_dict.append(image_dict)
     
-    # save annotaitons  in pikl file
+    # save annotaitons to file
     pickle.dump(data_dict, open(save_dataset_path, "wb"))
     return data_dict
 
