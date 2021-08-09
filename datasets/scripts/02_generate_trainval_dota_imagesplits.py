@@ -3,13 +3,14 @@ import argparse
 
 
 if __name__ == '__main__':
-    #sys.path.append("../")
     sys.path.append("datasets/dota_devkit")
     from ImgSplit_multi_process import splitbase, remove_no_detect_files
 
     args = argparse.Namespace()
-    args.imagedir = "/home/redne/LUIA_challenge_dev/tron_dota/ws/dota_dataset/planes_example/"
-    args.newimagedir = "/home/redne/LUIA_challenge_dev/tron_dota/ws/dota_dataset/planes_split4/train/"
+    #args.imagedir = "/home/redne/LUIA_challenge_dev/tron_dota/ws/dota_dataset/planes_example/"
+    #args.newimagedir = "/home/redne/LUIA_challenge_dev/tron_dota/ws/dota_dataset/planes_split4/train/"
+    args.imagedir = "/mnt/omreast_users/phhale/open_ds/DOTA_aerial_images/images/dev_demo/dota2_valtest_v3/valtest/"
+    args.newimagedir = "/mnt/omreast_users/phhale/open_ds/DOTA_aerial_images/images/dev_demo/dota2_valtest_v3/valtest_1024_split/"
     args.subsize = 1024
     args.gap = 200
     args.num_process = 16
