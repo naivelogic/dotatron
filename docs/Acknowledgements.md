@@ -43,3 +43,7 @@ Some code is modified and network pre-trained weights are obtained from the foll
 }
 
 ```
+
+## Other Ref
+
+* https://github.com/hukaixuan19970627/DOTA_devkit_YOLO
